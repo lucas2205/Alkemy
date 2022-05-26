@@ -1,8 +1,5 @@
 
-
 package com.DisneyProject.Alkemy.exceptions;
-
-
 
 import com.DisneyProject.Alkemy.dto.ErrorDetails;
 
