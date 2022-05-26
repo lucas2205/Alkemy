@@ -2,7 +2,6 @@ package com.DisneyProject.Alkemy.dto;
 
 import com.DisneyProject.Alkemy.entity.Personaje;
 import java.util.List;
-import java.util.Set;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -20,7 +19,7 @@ public class MultimediaDto {
 
     @NotEmpty
     @Size(min = 2, message = "La calificacion no debe estar vacia...")
-    int calificacion;
+    byte calificacion;
 
     @NotEmpty
     @Size(min = 2, message = "Agregar directorio de imagen...")
@@ -60,11 +59,11 @@ public class MultimediaDto {
         this.fechaCreacion = fechaCreacion;
     }
 
-    public int getCalificacion() {
+    public byte getCalificacion() {
         return calificacion;
     }
 
-    public void setCalificacion(int calificacion) {
+    public void setCalificacion(byte calificacion) {
         this.calificacion = calificacion;
     }
 

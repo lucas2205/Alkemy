@@ -22,7 +22,7 @@ public class Multimedia {
 
     private String titulo;
     private String fechaCreacion;
-    private int calificacion;
+    private byte calificacion;
     String pathImagen;
 
     @JsonBackReference
@@ -84,11 +84,11 @@ public class Multimedia {
         this.fechaCreacion = fechaCreacion;
     }
 
-    public int getCalificacion() {
+    public byte getCalificacion() {
         return calificacion;
     }
 
-    public void setCalificacion(int calificacion) {
+    public void setCalificacion(byte calificacion) {
         this.calificacion = calificacion;
     }
 
@@ -103,7 +103,7 @@ public class Multimedia {
     public Multimedia() {
     }
     
-     public Multimedia(Long id, String titulo, String fechaCreacion, int calificacion, Set<Personaje> personajes) {
+     public Multimedia(Long id, String titulo, String fechaCreacion, byte calificacion, Set<Personaje> personajes) {
         this.id = id;
         this.titulo = titulo;
         this.fechaCreacion = fechaCreacion;
