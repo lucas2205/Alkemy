@@ -11,6 +11,7 @@ import com.DisneyProject.Alkemy.dto.RegisterDto;
 import com.DisneyProject.Alkemy.security.JwtTokenProvider ;
 import com.DisneyProject.Alkemy.security.JwtAuthResponseDto;
 import com.DisneyProject.Alkemy.services.MailService;
+import com.DisneyProject.Alkemy.utilities.AppConstantes;
         
         
 import java.util.Collections;
@@ -59,7 +60,7 @@ public class AuthController {
         
         SecurityContextHolder.getContext().setAuthentication(authentication);
         
-        //OBTENEMOS EL TOKEN DEL JWTTOKENPROVIDER
+        
         String token = jwtTokenProvider.generateToken(authentication);
         
         return ResponseEntity.ok(new JwtAuthResponseDto(token));
@@ -86,7 +87,19 @@ public class AuthController {
     usuario.setEmail(registerDto.getEmail());
     usuario.setPassword(passwordEncoder.encode(registerDto.getPassword()));
     
+    if (rolDao.findByNombre("ROLE_ADMIN").isEmpty()) {
+        
+        RolUser role1 = new RolUser();
+        RolUser role2 = new RolUser();
+        
+            role2.setNombre("ROLE_USER");
+            rolDao.save(role2);
+            role1.setNombre("ROLE_ADMIN");
+            rolDao.save(role1);
+        }
+    
     RolUser roles = rolDao.findByNombre("ROLE_ADMIN").get();
+    
     usuario.setRoles(Collections.singleton(roles));
     
     UsuarioDao.save(usuario);

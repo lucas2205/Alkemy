@@ -1,5 +1,6 @@
 package com.DisneyProject.Alkemy.utilities;
 
+
 public class AppConstantes {
 
     public static final String NUMERO_DE_PAGINA_POR_DEFECTO = "0";

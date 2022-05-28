@@ -21,7 +21,7 @@ public class MailServiceImplement implements MailService{
         msg.setTo("lucas2205neo@gmail.com", welcomeEmail);
 
         msg.setSubject("Bienvenido!!!");
-        msg.setText("Hello World \n ");
+        msg.setText("Bienvenido al proyecto de DisneyAlkemy de Lucas González \n ");
 
         javaMailSender.send(msg);
     

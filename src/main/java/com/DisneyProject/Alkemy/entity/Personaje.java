@@ -3,6 +3,7 @@ package com.DisneyProject.Alkemy.entity;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import java.util.Set;
+import javax.persistence.Column;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,6 +23,8 @@ public class Personaje {
     String nombre;
     int edad;
     int peso;
+    
+    @Column(columnDefinition="varchar(1000)")
     String historia;
     String pathImagen;
     
@@ -46,9 +49,7 @@ public class Personaje {
 
     public void setPathImagen(String pathImagen) {
         this.pathImagen = pathImagen;
-    }
-
-    
+    } 
     
     public Personaje() {
     }
