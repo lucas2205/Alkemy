@@ -11,7 +11,6 @@ import com.DisneyProject.Alkemy.dto.RegisterDto;
 import com.DisneyProject.Alkemy.security.JwtTokenProvider ;
 import com.DisneyProject.Alkemy.security.JwtAuthResponseDto;
 import com.DisneyProject.Alkemy.services.MailService;
-import com.DisneyProject.Alkemy.utilities.AppConstantes;
         
         
 import java.util.Collections;
